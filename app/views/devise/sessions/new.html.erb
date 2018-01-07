@@ -1,5 +1,5 @@
 <%= render 'layouts/header' %>
-
+  <% if alert %>
   <div id="">
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
       <strong><%= alert %></strong>
@@ -8,6 +8,7 @@
       </button>
     </div>
   </div>
+  <% end %>
 
 <h2>Log in</h2>
 
