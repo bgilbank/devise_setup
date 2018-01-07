@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0.beta3'
+gem 'friendly_id', '~> 5.1.0'
 
 
 group :development, :test do
