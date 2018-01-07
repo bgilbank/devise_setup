@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titletag:</strong>
+  <%= @page.titletag %>
+</p>
+
+<p>
+  <strong>Meta:</strong>
+  <%= @page.meta %>
+</p>
+
+<p>
+  <strong>Tile:</strong>
+  <%= @page.tile %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @page.slug %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @page.body %>
+</p>
+
+<%= link_to 'Edit', edit_admin_page_path(@page) %> |
+<%= link_to 'Back', admin_pages_path %>
