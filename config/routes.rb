@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :posts
     resources :pages
+    devise_for :users 
   end
 
 
