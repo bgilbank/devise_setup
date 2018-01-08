@@ -3,8 +3,13 @@ Rails.application.routes.draw do
   
   namespace :admin do
     resources :posts
+    root to: "posts#index"
     resources :pages
-    devise_for :users 
+    resources :users, only: [:index, :show, :edit] do
+     collection do
+      patch 'update_password'
+    end
+   end
   end
 
 
@@ -12,4 +17,10 @@ Rails.application.routes.draw do
   resources :pages, only: [:show]
   resources :posts
   root to: 'posts#index'
- end 
+  resources :users do
+   collection do
+     patch 'update_password'
+     patch 'update_profile'
+  end
+ end
+end

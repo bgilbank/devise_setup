@@ -1,39 +1,53 @@
 <%= render 'layouts/header' %>
 
-<p id="notice"><%= notice %></p>
+<div class="blog-header">
+        <div class="container">
+          <h1 class="blog-title">The Devise Blog</h1>
+          <p class="lead blog-description">Listing Posts.</p>
+        </div>
+      </div>
+    </header>
 
-<h1>Posts</h1>
+    <main role="main" class="container">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title tag</th>
-      <th>Meta</th>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <div class="row">
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title_tag %></td>
-        <td><%= post.meta %></td>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="col-sm-8 blog-main">
 
-<br>
+      <h1>Posts</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Title tag</th>
+            <th>Meta</th>
+            <th>Title</th>
+            <th>Body</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @posts.each do |post| %>
+            <tr>
+              <td><%= post.title_tag %></td>
+              <td><%= post.meta %></td>
+              <td><%= post.title %></td>
+              <td><%= post.body %></td>
+              <td><%= link_to 'Show', post %></td>
+              <td><%= link_to 'Edit', edit_post_path(post) %></td>
+              <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
 
 <%= link_to 'New Post', new_post_path %>
 
 </div>
+
+<%= render 'layouts/sidebar' %>
 
 <%= render 'layouts/footer' %>

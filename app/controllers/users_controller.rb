@@ -1,0 +1,52 @@
+class UsersController < ApplicationController
+  before_action :authenticate_user!
+
+ def index
+  @users = User.all
+ end
+
+ def show
+  @user = User.find(params[:id])
+ end
+
+ def edit
+  @user = current_user
+ end
+
+ def update_profile
+  @user = current_user
+  if @user.update(user_params)
+    # Sign in the user by passing validation in case their password changed
+    bypass_sign_in(@user)
+    redirect_to admin_root_path, notice: "Your changes have been saved"
+  else
+    render "edit"
+  end
+end
+
+
+def update_password
+  @user = current_user
+  if @user.update(user_params)
+    # Sign in the user by passing validation in case their password changed
+    bypass_sign_in(@user)
+    redirect_to admin_root_path, notice: "Your password has been updated"
+  else
+    render "edit"
+  end
+end
+
+def destroy
+  @user = User.find(params[:id])
+  if @user.destroy
+    redirect_to users_path, notice: "User has been deleted"
+  end
+end 
+
+private
+
+def user_params
+  params.require(:user).permit(:password, :password_confirmation, :email, :first_name, :last_name, :about, :role, :img)
+end
+
+end
