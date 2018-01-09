@@ -1,11 +1,10 @@
-// This is a variable:
-// === COLORS ===
-$text-color: #222222;
-$theme-color: #170a48;
-$secondary-color: #f27731;
-$ternary-color: #ccf962;
-$link-color: $secondary-color; // you can add on...
-$menu-item-color: white;
+/*------------------------------------------------------------------
+ Navigation
+*/
+
+.logout-color {
+	color: $active-color
+}
 
 
 /*------------------------------------------------------------------

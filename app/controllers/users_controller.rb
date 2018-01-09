@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   if @user.update(user_params)
     # Sign in the user by passing validation in case their password changed
     bypass_sign_in(@user)
-    redirect_to admin_root_path, notice: "Your changes have been saved"
+    redirect_to dashboard_root_path, notice: "Your changes have been saved"
   else
     render "edit"
   end
@@ -27,10 +27,10 @@ end
 
 def update_password
   @user = current_user
-  if @user.update(user_params)
+  if @user.update(user_params) # make people enter their old pasword with @user.update_with_password(user_params)
     # Sign in the user by passing validation in case their password changed
     bypass_sign_in(@user)
-    redirect_to admin_root_path, notice: "Your password has been updated"
+    redirect_to dashboard_root_path, notice: "Your password has been updated"
   else
     render "edit"
   end
@@ -38,7 +38,7 @@ end
 
 def destroy
   if @user.destroy
-    redirect_to users_path, notice: "User has been deleted"
+    redirect_to root_path, notice: "User has been deleted"
   end
 end 
 
