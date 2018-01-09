@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_post, only: [:show, :destroy]
   before_action :authenticate_user!
 
  def index
@@ -6,7 +7,6 @@ class UsersController < ApplicationController
  end
 
  def show
-  @user = User.find(params[:id])
  end
 
  def edit
@@ -37,7 +37,6 @@ def update_password
 end
 
 def destroy
-  @user = User.find(params[:id])
   if @user.destroy
     redirect_to users_path, notice: "User has been deleted"
   end
@@ -45,8 +44,12 @@ end
 
 private
 
-def user_params
-  params.require(:user).permit(:password, :password_confirmation, :email, :first_name, :last_name, :about, :role, :img)
-end
+ def set_post
+   @user = User.find(params[:id])
+ end
+
+ def user_params
+    params.require(:user).permit(:password, :password_confirmation, :email, :first_name, :last_name, :about, :role, :img)
+ end
 
 end

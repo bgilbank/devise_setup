@@ -7,23 +7,17 @@ class ApplicationController < ActionController::Base
   include DeviseHelper
 
   def configure_permitted_parameters
-    added_attrs = [:password, :password_confirmation, :current_password, :first_name, :last_name, :about, :role, :img] 
+    added_attrs = [:first_name, :last_name, :about, :role, :img] 
 	  devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
   end  
   
 
   def after_sign_in_path_for(user)
-  	admin_posts_path
+  	dashboard_root_path
   end
 
-  # def after_update_path_for(user)
-      # user_path(resource)
-  # end
-
    def after_sign_out_path_for(user)
-    "/login"
+    new_user_session_path
   end 
-
-
 
 end

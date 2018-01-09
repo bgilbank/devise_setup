@@ -1,4 +1,4 @@
-module Admin
+module Dashboard
   class PostsController < AdminController
     before_action :set_post, only: [:show, :edit, :update, :destroy]
 

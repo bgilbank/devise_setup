@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
  
   
-  namespace :admin do
+  namespace :dashboard do
     resources :posts
-    root to: "posts#index"
+    resources :mains
+    root to: "mains#index"
     resources :pages
     resources :users, only: [:index, :show, :edit] do
      collection do
