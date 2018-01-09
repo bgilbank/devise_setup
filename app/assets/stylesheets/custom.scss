@@ -1,5 +1,30 @@
-#devise-alert-messages-1 {
+// This is a variable:
+// === COLORS ===
+$text-color: #222222;
+$theme-color: #170a48;
+$secondary-color: #f27731;
+$ternary-color: #ccf962;
+$link-color: $secondary-color; // you can add on...
+$menu-item-color: white;
+
+
+/*------------------------------------------------------------------
+ Devise Alerts
+*/
+
+.devise-alert-messages {
+    margin-top: -16px;
 }
 
-#devise-alert-messages-2 {
+.devise-alert-messages {
+	p {
+    margin-left: 63px; }
+}
+
+.devise-alert-messages .alert-dismissible .close {
+    margin-right: 62px;
+}
+
+.devise-alert-messages .alert {
+    height: 50px;
 }
