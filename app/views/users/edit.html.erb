@@ -1,5 +1,82 @@
+<div class="section-block section-block-intro">
+ <div class="container">
+  <div class="row justify-content-md-center">
+   <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 m-auto"> 
+	 <h2>Your Profile</h2>
+   </div>
+	 <div class="edit-profile col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 m-auto">
+	  <div class="row">
+	   <div class="col-8">
+		   <div class="card-body">
+	        <h5 class="card-title">Edit Your Profile</h5>
+	         <img src="https://s3.amazonaws.com/mirrorco/sample.jpg" alt="..." class="img-thumbnail profile-image-1">
+	         <p class="card-text">Update your profile picture</p>
+	         <a href="#" class="btn btn-primary">Upload</a>
+       </div>
+   </div>
 
-<%= render 'password_form' %><br>
+<!-- MODAL TRIGGER 1 -->
+    <div class="col-4"><br>
+    <button class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#myProfile">Edit Profile</button>
 
-<%= render 'profile_form' %><br>
+    <!-- MODAL 1 -->
+    <div class="modal" id="myProfile">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit your profile</h5>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <%= render 'profile_form' %>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div> 
+</div>
+</div>
 
+   <hr><br>
+
+   <div class="row">
+	  <div class="col-8">
+		  <div class="card-body">
+	        <h5 class="card-title">Edit Your Password</h5>
+	         <p class="card-text">Update your devise password</p>
+     </div>
+   </div>
+
+
+<!-- MODAL TRIGGER 2 -->
+    <div class="col-4"><br>
+    <button class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#myPassword">Edit Password</button>
+
+    <!-- MODAL 2 -->
+    <div class="modal" id="myPassword">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Change Your Password</h5>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <%= render 'password_form' %><br>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+	 	 
+	 
+	 	</div>
+	 	 	
+	 	</div>
+	 </div>
+	</div>
+</div>

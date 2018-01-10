@@ -1,9 +1,32 @@
+
 /*------------------------------------------------------------------
- Navigation
+ Global
+*/
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin-bottom: $footer-height;
+}
+
+
+/*------------------------------------------------------------------
+ Header Navigation
 */
 
 .logout-color {
-	color: $active-color
+	color: $active-color;
+}
+
+.profile-img {
+	margin-top: -5px;
+	margin-right: 5px;
+	float: left;
+	width: 30px;
+	height: 30px;
 }
 
 
@@ -26,4 +49,44 @@
 
 .devise-alert-messages .alert {
     height: 50px;
+}
+
+/*------------------------------------------------------------------
+ Pages
+*/
+
+.section-block {
+	padding-bottom: 100px; 
+}
+
+.section-block-intro {
+	margin-top: $section-block-intro;
+}
+
+
+// Edit Account
+
+.edit-profile {
+	border: $border;
+	border-radius: $border-radius;
+	padding: $padding;
+}
+
+.profile-image-1 {
+	width: 200px;
+	height: 200px;
+}
+
+/*------------------------------------------------------------------
+ Footer
+*/
+
+.footer { 
+	position: absolute;
+	bottom: 0;
+	height: $footer-height;
+	line-height: $footer-height;
+	background-color: $footer-color;
+	width: 100%;
+
 }

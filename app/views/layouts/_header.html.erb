@@ -1,5 +1,6 @@
 <!-- NAVBAR WITH DROPDOWN -->
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
+<header>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top mb-3">
   <div class="container">
       <a class="navbar-brand" href="#">Devise</a>
           <ul class="navbar-nav">
@@ -11,14 +12,18 @@
               </li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
+                <img src="" class="rounded-circle profile-img" alt="">
                 <div class="dropdown-menu">
                   <%= link_to "View All Profiles", users_path, class: "dropdown-item" %>
-                  <%= link_to "View Your Profile", current_user, class: "dropdown-item" %>
-                  <%= link_to "Edit Your Profile", edit_user_path, class: "dropdown-item" %>
+                  <%= link_to "View Your Profile", user_path(current_user), class: "dropdown-item" %>
+                  <%= link_to "Edit Your Profile", edit_user_path(current_user), class: "dropdown-item" %>
                   <div class="dropdown-divider"></div>
                   <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "dropdown-item logout-color") %>  
                 </div>
               </li>
           </ul> 
       </div>
-</nav>
+  </nav>
+</header>
+
+
