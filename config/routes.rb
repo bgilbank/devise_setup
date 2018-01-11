@@ -5,12 +5,6 @@ Rails.application.routes.draw do
     resources :posts
     resources :mains
     root to: "mains#index"
-    resources :pages
-    resources :users, only: [:index, :show, :edit] do
-     collection do
-      patch 'update_password'
-    end
-   end
   end
 
 
@@ -22,6 +16,7 @@ Rails.application.routes.draw do
    collection do
      patch 'update_password'
      patch 'update_profile'
+     patch 'update_profile_image'
   end
  end
 end

@@ -1,0 +1,9 @@
+<%= form_for(@user, :url => { :action => "update_profile_image" } ) do |f| %>
+
+ 
+ <%= f.file_field :img, required: true %>
+
+ <%= f.submit "Update", class: "btn btn-danger" %>
+
+ <% end %>
+

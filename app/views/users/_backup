@@ -1,0 +1,8 @@
+ <label class="btn btn-primary">
+  Upload
+  <span style="display:none;">
+    <%= f.file_field :img, required: true %>
+  </span>
+</label>
+
+<% image_tag user.img_url %>

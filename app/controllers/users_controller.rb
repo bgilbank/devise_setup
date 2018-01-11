@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_post, only: [:show, :destroy]
+  before_action :set_post, only: [:show, :edit, :destroy]
   before_action :authenticate_user!
 
  def index
@@ -12,6 +12,17 @@ class UsersController < ApplicationController
  def edit
   @user = current_user
  end
+
+ def update_profile_image
+  @user = current_user
+  if @user.update(user_params)
+    # Sign in the user by passing validation in case their password changed
+    bypass_sign_in(@user)
+    redirect_to user_path(current_user), notice: "Sucess, your changes have been saved"
+  else
+    render "edit", notice: "Image upload failed, please try again"
+  end
+end
 
  def update_profile
   @user = current_user

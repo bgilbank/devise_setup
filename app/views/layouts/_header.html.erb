@@ -15,8 +15,8 @@
                 <img src="" class="rounded-circle profile-img" alt="">
                 <div class="dropdown-menu">
                   <%= link_to "View All Profiles", users_path, class: "dropdown-item" %>
-                  <%= link_to "View Your Profile", user_path(current_user), class: "dropdown-item" %>
-                  <%= link_to "Edit Your Profile", edit_user_path(current_user), class: "dropdown-item" %>
+                  <%= link_to "View Your Profile", user_path(@user), class: "dropdown-item" %>
+                 
                   <div class="dropdown-divider"></div>
                   <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "dropdown-item logout-color") %>  
                 </div>
@@ -25,5 +25,6 @@
       </div>
   </nav>
 </header>
+
 
 

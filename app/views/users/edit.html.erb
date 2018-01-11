@@ -10,10 +10,15 @@
 		   <div class="card-body">
 	        <h5 class="card-title">Edit Your Profile</h5>
 	         <img src="https://s3.amazonaws.com/mirrorco/sample.jpg" alt="..." class="img-thumbnail profile-image-1">
-	         <p class="card-text">Update your profile picture</p>
-	         <a href="#" class="btn btn-primary">Upload</a>
+           <%= gravatar_for @user %>
+
+	         <p class="card-text">Update your <a href="https://en.gravatar.com/" target="_blank">gravatar image</a> or upload a new profile picture</p>
+           <%= render 'img_form' %>
+	         
        </div>
    </div>
+<% if @user.img.nil? %><% end %>
+
 
 <!-- MODAL TRIGGER 1 -->
     <div class="col-4"><br>
