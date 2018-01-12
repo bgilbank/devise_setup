@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :destroy]
   before_action :authenticate_user!
 
  def index
@@ -54,10 +53,6 @@ def destroy
 end 
 
 private
-
- def set_post
-   @user = User.find(params[:id])
- end
 
  def user_params
     params.require(:user).permit(:password, :password_confirmation, :email, :first_name, :last_name, :about, :role, :img)

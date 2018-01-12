@@ -9,7 +9,7 @@
 	   <div class="col-8">
 		   <div class="card-body">
 	        <h5 class="card-title">Edit Your Profile</h5>
-	         <img src="https://s3.amazonaws.com/mirrorco/sample.jpg" alt="..." class="img-thumbnail profile-image-1">
+	         <img src="https://s3.amazonaws.com/mirrorco/sample.jpg" alt="..." class="img-thumbnail profile-img-show">
            <%= gravatar_for @user %>
 
 	         <p class="card-text">Update your <a href="https://en.gravatar.com/" target="_blank">gravatar image</a> or upload a new profile picture</p>
@@ -17,7 +17,6 @@
 	         
        </div>
    </div>
-<% if @user.img.nil? %><% end %>
 
 
 <!-- MODAL TRIGGER 1 -->

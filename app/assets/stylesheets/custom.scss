@@ -29,6 +29,21 @@ body {
 	height: 30px;
 }
 
+.profile-img-show {
+	float: left;
+	width: 200px;
+	height: 200px;
+}
+
+.gravatar {
+	padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    max-width: 100%;
+    height: auto;
+}
+
 
 /*------------------------------------------------------------------
  Devise Alerts
