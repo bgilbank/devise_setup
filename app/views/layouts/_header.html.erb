@@ -10,10 +10,18 @@
               <li class="nav-item">
                   <a class="nav-link" href="#">Example Link</a>
               </li>
-              <% if user_signed_in? %>
+             <% if user_signed_in? %>
+             <% if current_user.img.present? %>
+             <li class="nav-item">
+                <%= image_tag current_user.img.url, class: "rounded-circle header-profile-img" %>
+              </li>
+             <% else %>
+             <li class="nav-item">
+                <%= header_gravatar_for @user %>
+             </li>
+              <% end %>
               <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
-                <img src="" class="rounded-circle profile-img" alt="">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"></a>
                 <div class="dropdown-menu">
                   <%= link_to "View All Profiles", users_path, class: "dropdown-item" %>
                   <%= link_to "View Your Profile", current_user, class: "dropdown-item" %>

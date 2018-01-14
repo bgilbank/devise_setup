@@ -1,38 +1,69 @@
-
 /*------------------------------------------------------------------
  Global
 */
-
 html {
 	position: relative;
 	min-height: 100%;
 }
-
 body {
 	margin-bottom: $footer-height;
 }
-
-
+.section-block {
+	padding-bottom: $section-block; 
+}
+.section-block-intro {
+	margin-top: $section-block-intro;
+}
 /*------------------------------------------------------------------
  Header Navigation
 */
-
+.navbar-expand-sm .navbar-nav .dropdown-menu {
+    margin-top: 6px;
+    margin-left: -149px;
+}
+.header-profile-img {
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 24px;
+    height: 24px;
+    z-index: 1000;
+}
+.header_gravatar {
+	border-radius: 50% !important;
+}
 .logout-color {
 	color: $active-color;
 }
-
-.profile-img {
-	margin-top: -5px;
-	margin-right: 5px;
-	width: 30px;
-	height: 30px;
+/*------------------------------------------------------------------
+ Devise Alerts
+*/
+.devise-alert-messages {
+    margin-top: -16px;
 }
-
-.profile-img-show {
+.devise-alert-messages {
+	p {
+    margin-left: 63px; }
+}
+.devise-alert-messages .alert-dismissible .close {
+    margin-right: 62px;
+}
+.devise-alert-messages .alert {
+    height: 50px;
+}
+/*------------------------------------------------------------------
+ Pages
+*/
+// Edit Account
+.edit-profile {
+	border: $border;
+	border-radius: $border-radius;
+	padding: $padding;
+}
+.profile-img-edit {
 	width: 200px;
 	height: 200px;
 }
-
 .gravatar {
 	padding: 0.25rem;
     background-color: #fff;
@@ -41,59 +72,9 @@ body {
     max-width: 100%;
     height: auto;
 }
-
-
-/*------------------------------------------------------------------
- Devise Alerts
-*/
-
-.devise-alert-messages {
-    margin-top: -16px;
-}
-
-.devise-alert-messages {
-	p {
-    margin-left: 63px; }
-}
-
-.devise-alert-messages .alert-dismissible .close {
-    margin-right: 62px;
-}
-
-.devise-alert-messages .alert {
-    height: 50px;
-}
-
-/*------------------------------------------------------------------
- Pages
-*/
-
-.section-block {
-	padding-bottom: 100px; 
-}
-
-.section-block-intro {
-	margin-top: $section-block-intro;
-}
-
-
-// Edit Account
-
-.edit-profile {
-	border: $border;
-	border-radius: $border-radius;
-	padding: $padding;
-}
-
-.profile-image-1 {
-	width: 200px;
-	height: 200px;
-}
-
 /*------------------------------------------------------------------
  Footer
 */
-
 .footer { 
 	position: absolute;
 	bottom: 0;

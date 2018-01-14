@@ -10,7 +10,7 @@
 		   <div class="card-body">
 	        <h5 class="card-title">Edit Your Profile</h5>
 	         <% if @user.img.present? %>
-           <%= image_tag @user.img.url, class: "img-thumbnail profile-img-show" %>
+           <%= image_tag @user.img.url, class: "img-thumbnail profile-img-edit" %>
            <% else %>
            <%= gravatar_for @user %>
            <% end %>
