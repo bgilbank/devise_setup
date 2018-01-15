@@ -17,7 +17,7 @@
              <% end %>
              <% if user_signed_in? && current_user.img.blank? %> 
              <li class="nav-item">
-                <%= header_gravatar_for @user %>
+                <%= header_gravatar_for(current_user) %>
              </li>
               <% end %>
               <% if user_signed_in? %>
