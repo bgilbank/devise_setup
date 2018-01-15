@@ -20,5 +20,11 @@ class User < ApplicationRecord
 
   mount_uploader :img, UserUploader
 
+  extend FriendlyId
+  friendly_id :uniqueslug, use: :slugged 
+  
+  def uniqueslug 
+    "#{first_name}-#{last_name}" 
+  end 
 
 end

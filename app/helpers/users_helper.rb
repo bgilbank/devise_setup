@@ -1,4 +1,5 @@
 module UsersHelper
+
 # Gravatar with default img 
 	def gravatar_for(user, size: 190)
 	  gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
