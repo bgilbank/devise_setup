@@ -1,3 +1,49 @@
-<br><br><br><br><br><br><br><br><br><h1>show Me the Meaning</h1>
+<div class="section-block section-block-intro">
+ <div class="container">
+  <div class="row">
+   <div class="col-sm-4"> 
+   	<div class="card border-top-0 border-bottom-0 border-left-0">
+	  <div class="card-body your-profile">
+	     <% if @user.img.present? %>
+          <%= image_tag @user.img.url, class: "card-img-top img-thumbnail profile-img-edit" %>
+         <% else %>
+           <%= gravatar_for @user %>
+          <% end %>
+           <div class="card-block">
+        <h4 class="card-title"><%= @user.first_name + ' ' +  @user.last_name %></h4>
+  	       <p class="card-text"><%= @user.about %></p>
+	    </div>
+       </div>
+     </div>
+    </div>
 
-
+	<div class="col-sm-8">
+	 <h2 class="page-titles">Your Posts:</h2>
+	  <% if @posts.present? %>
+       <% @posts.each do |post| %>
+     <div class="card rounded users-posts-show">
+      <div class="card-block card-block-users">
+       <h4 class="card-title"><%= @user.post.title %></h4>
+         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		    <a href="#" class="card-link">Card link</a>
+		    <a href="#" class="card-link">Another link</a>
+		    <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+     </div>
+     <% end %>
+     <% else %>
+     <div class="card rounded users-posts-show">
+      <div class="card-block card-block-users">
+       <h4 class="card-title">No posts yet!</h4>
+         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		    <a href="#" class="card-link">Card link</a>
+		    <a href="#" class="card-link">Another link</a>
+		    <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+     </div>
+     <% end %>
+    </div>
+  
+  </div><!-- Row -->
+ </div><!-- Container -->
+</div><!-- Section Block -->

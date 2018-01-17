@@ -1,19 +1,19 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_user, only: [:show, :edit, :update_profile_image, :update_profile, :update_password]
 
  def index
   @users = User.all
  end
 
  def show
+  @posts = current_user.posts
  end
 
  def edit
-  @user = current_user
  end
 
  def update_profile_image
-  @user = current_user
   if @user.update(user_params)
     # Sign in the user by passing validation in case their password changed
     bypass_sign_in(@user)
@@ -24,7 +24,6 @@ class UsersController < ApplicationController
 end
 
  def update_profile
-  @user = current_user
   if @user.update(user_params)
     # Sign in the user by passing validation in case their password changed
     bypass_sign_in(@user)
@@ -36,7 +35,6 @@ end
 
 
 def update_password
-  @user = current_user
   if @user.update(user_params) # make people enter their old pasword with @user.update_with_password(user_params)
     # Sign in the user by passing validation in case their password changed
     bypass_sign_in(@user)
@@ -53,6 +51,10 @@ def destroy
 end 
 
 private
+
+ def set_user
+    @user = current_user
+ end
 
  def user_params
     params.require(:user).permit(:password, :password_confirmation, :email, :first_name, :last_name, :about, :role, :img, :slug)

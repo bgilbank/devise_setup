@@ -25,8 +25,7 @@ module Dashboard
     # POST /posts
     # POST /posts.json
     def create
-      @post = Post.new(post_params)
-
+      @post = current_user.posts.build(post_params)
       respond_to do |format|
         if @post.save
           format.html { redirect_to dashboard_post_path(@post), notice: 'Post was successfully created.' }
