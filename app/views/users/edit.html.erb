@@ -1,11 +1,11 @@
 <div class="section-block section-block-intro">
  <div class="container">
-   <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 m-auto"> 
+   <div class="col-md-8 m-auto"> 
 	 <h2>Your Profile</h2>
    </div>
-	 <div class="edit-profile col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 m-auto">
+	 <div class="edit-profile col-md-8 m-auto">
 	  <div class="row">
-	   <div class="col-8">
+	   <div class="col-lg-8 col-md-6 col-sm-6">
 		   <div class="card-body">
 	        <h5 class="card-title">Edit Your Profile</h5>
 	         <% if @user.img.present? %>
@@ -22,7 +22,7 @@
 
 
 <!-- MODAL TRIGGER 1 -->
-    <div class="col-4"><br>
+    <div class="col-lg-4 col-md-6 col-sm-6"><br>
     <button class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#myProfile">Edit Profile</button>
 
     <!-- MODAL 1 -->
@@ -48,7 +48,7 @@
    <hr><br>
 
    <div class="row">
-	  <div class="col-8">
+	  <div class="col-lg-8 col-md-6 col-sm-6">
 		  <div class="card-body">
 	        <h5 class="card-title">Edit Your Password</h5>
 	         <p class="card-text">Update your devise password</p>
@@ -57,7 +57,7 @@
 
 
 <!-- MODAL TRIGGER 2 -->
-    <div class="col-4"><br>
+    <div class="col-lg-4 col-md-6 col-sm-6"><br>
     <button class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#myPassword">Edit Password</button>
 
     <!-- MODAL 2 -->
@@ -84,7 +84,7 @@
   <hr><br>
 
   <div class="row">
-	 <div class="col-8">
+	 <div class="col-lg-8 col-md-6 col-sm-6">
        <div class="card-body">
          <h5 class="card-title">Cancel your account</h5>     
              <p class="card-text">Be careful, this can't be undone</p>
@@ -92,7 +92,7 @@
        </div>
 
     <!-- MODAL TRIGGER 3 -->
-    <div class="col-4"><br>
+    <div class="col-lg-4 col-md-6 col-sm-6"><br>
     <%= button_to "Cancel Account", registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-outline-danger btn-lg" %></p>
 	 
 	 

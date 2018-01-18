@@ -7,7 +7,7 @@ class UsersController < ApplicationController
  end
 
  def show
-  @posts = current_user.posts
+  @posts = current_user.posts.order("created_at DESC")
  end
 
  def edit
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   if @user.update(user_params)
     # Sign in the user by passing validation in case their password changed
     bypass_sign_in(@user)
-    redirect_to user_path(current_user), notice: "Sucess, your changes have been saved"
+    redirect_to dashboard_root_path, notice: "Sucess, your changes have been saved"
   else
     render "edit", notice: "Image upload failed, please try again"
   end

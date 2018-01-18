@@ -12,6 +12,7 @@
            <div class="card-block">
         <h4 class="card-title"><%= @user.first_name + ' ' +  @user.last_name %></h4>
   	       <p class="card-text"><%= @user.about %></p>
+           <%= link_to "New Blog Post", new_dashboard_post_path, class: 'btn btn-primary' %>
 	    </div>
        </div>
      </div>
@@ -19,15 +20,14 @@
 
 	<div class="col-sm-8">
 	 <h2 class="page-titles">Your Posts:</h2>
-	  <% if @posts.present? %>
-       <% @posts.each do |post| %>
-     <div class="card rounded users-posts-show">
+    <% if @posts.present? %>
+     <% @posts.each do |post| %>
+     <div class="card rounded users-posts-show mt-2">
       <div class="card-block card-block-users">
-       <h4 class="card-title"><%= @user.post.title %></h4>
-         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-		    <a href="#" class="card-link">Card link</a>
-		    <a href="#" class="card-link">Another link</a>
-		    <a href="#" class="btn btn-primary">Go somewhere</a>
+       <h4 class="card-title"><%= post.title %></h4>
+         <p class="card-text"><%= truncate(post.body.html_safe, :escape => false, :length => 60) %></p>
+		    <%= link_to 'Edit this post', edit_dashboard_post_path(post), class: 'card-link' %>
+		    <%= link_to 'Deletete this post', dashboard_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link text-danger' %>
       </div>
      </div>
      <% end %>
@@ -35,10 +35,8 @@
      <div class="card rounded users-posts-show">
       <div class="card-block card-block-users">
        <h4 class="card-title">No posts yet!</h4>
-         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-		    <a href="#" class="card-link">Card link</a>
-		    <a href="#" class="card-link">Another link</a>
-		    <a href="#" class="btn btn-primary">Go somewhere</a>
+         <p class="card-text">Create one now.</p>
+		     <%= link_to 'New Post', new_dashboard_post_path, class: "btn btn-primary" %>
       </div>
      </div>
      <% end %>
