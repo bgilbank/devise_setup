@@ -30,8 +30,6 @@ h6 {}
 	padding-bottom: 20px;
 }
 
-
-
 /*------------------------------------------------------------------
  Header Navigation
 */
@@ -78,6 +76,16 @@ h6 {}
 /*------------------------------------------------------------------
  Pages
 */
+
+
+// Login page
+.login-inputs {
+	width: 70%
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset; // remove chrome highlighting
+}
 
 // User Show Page
 .card-title {

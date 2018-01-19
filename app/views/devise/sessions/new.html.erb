@@ -1,28 +1,46 @@
-<h2>Log in</h2>
-
+<div class="section-block section-block-intro">
+ <div class="container">
+  <div class="row justify-content-md-center">
+   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 m-auto">
+    <div class="card rounded-0 card-outline-primary">
+     <div class="card-header">
+      <h2 class="card-title text-center mb-0">LOGIN</h2> 
+     </div>
+   
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group">
+  <div class="card-block pt-5">
+  <div class="form-group login-inputs m-auto pb-2">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, class: "form-control" %>
+    <%= f.email_field :email, autofocus: true, class: "form-control form-control-lg rounded-0" %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group login-inputs m-auto pt-2 pb-4">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+    <%= f.password_field :password, autocomplete: "off", class: "form-control form-control-lg rounded-0" %>
   </div>
-
+  
   <% if devise_mapping.rememberable? -%>
-    <div class="form-check">
-      <%= f.check_box :remember_me, class: "form-check-input" %>
+   <div class="form-group login-inputs m-auto pb-4">
+      <div class="form-check">
+      <%= f.check_box :remember_me, class: "form-check-input rounded-circle" %>
       <%= f.label :remember_me, class: "form-check-label" %>
-    </div>
+        </div>
+   </div>
   <% end -%>
 
-  <div class="form-group">
-    <%= f.submit "Log in", class: "btn btn-primary" %>
+  <div class="form-group login-inputs m-auto">
+    <%= f.submit "Log in", class: "btn btn-success btn-lg btn-block" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+  <div class="form-group pt-4 pb-4">
+  <%= render "devise/shared/links", class: "card-link" %>
+  </div> 
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+</div>
 
-<%= render 'layouts/footer' %>
+

@@ -26,8 +26,8 @@
       <div class="card-block card-block-users">
        <h4 class="card-title"><%= post.title %></h4>
          <p class="card-text"><%= truncate(post.body.html_safe, :escape => false, :length => 60) %></p>
-		    <%= link_to 'Edit this post', edit_dashboard_post_path(post), class: 'card-link' %>
-		    <%= link_to 'Deletete this post', dashboard_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link text-danger' %>
+		    <%= link_to 'Edit this post', edit_dashboard_post_path(post), class: 'btn btn-outline-info btn-sm mr-3' %>
+		    <%= link_to 'Deletete this post', dashboard_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %>
       </div>
      </div>
      <% end %>
